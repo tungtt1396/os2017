@@ -1,0 +1,39 @@
+#ps -e
+ 5843 ?        00:00:00 kworker/u16:0
+ 5854 ?        00:00:00 kworker/0:0
+ 5884 ?        00:00:00 kworker/3:0
+ 5886 ?        00:00:00 kworker/1:2
+ 5915 ?        00:00:00 kworker/2:2
+ 5927 ?        00:00:00 kworker/u16:2
+ 5984 ?        00:00:00 kworker/0:1
+ 5988 ?        00:00:00 kworker/1:0
+ 6013 ?        00:00:00 kworker/3:2
+ 6018 pts/34   00:00:00 ps
+
+#gnome-calculator &
+[1] 6554
+
+#ps -e | grep 'gnome-calculato'
+6554 pts/18   00:00:00 gnome-calculato
+
+#cat /proc/6554/status
+Name:	gnome-calculato
+State:	S (sleeping)
+Tgid:	6554
+Ngid:	0
+Pid:	6554
+PPid:	6450
+TracerPid:	0
+Uid:	1001	1001	1001	1001
+Gid:	1001	1001	1001	1001
+FDSize:	256
+
+#kill -stop 6554
+[1]+  Stopped                 gnome-calculator
+
+#kill -cont 6554
+output notthing in terminal
+
+#kill -kill 6554
+[1]+  Killed                  gnome-calculator
+

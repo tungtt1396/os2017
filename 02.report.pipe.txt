@@ -1,0 +1,22 @@
+# ls Desktop | grep 'list'
+list
+
+#wc /etc/passwd
+  41   70 2313 /etc/passwd
+
+#free -g
+              total        used        free      shared  buff/cache   available
+Mem:              3           1           0           0           1           1
+Swap:             7           0           7
+
+#cat /proc/cpuinfo | grep 'siblings'
+siblings	: 4
+siblings	: 4
+siblings	: 4
+siblings	: 4
+
+#cd Desktop | find -iname '*.jpg' | wc -l
+0
+
+
+
